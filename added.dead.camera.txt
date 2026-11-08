@@ -1,0 +1,2797 @@
+
+
+
+
+
+
+(() => {
+  const clean = {
+    defineProperty: Object.defineProperty,
+    addEventListener: (t, ...a) => t.addEventListener(...a),
+  };
+  function cAJhrw() { return clean; }
+  function X400CW(a, b, c) { return cAJhrw().defineProperty(a, b, c); }
+  function lmr4__u(ALUIMu, MELTlq = "anonymous") {
+    if (!ALUIMu || typeof ALUIMu !== "function") {
+      return ALUIMu;
+    }
+    try {
+      X400CW(ALUIMu, "name", { ["value"]: MELTlq, ["configurable"]: true });
+    } catch (e) {}
+    const vxz0Ilv = "function " + MELTlq + "() { [native code] }";
+    try {
+      X400CW(ALUIMu, "toString", {
+        ["configurable"]: true,
+        writable: true,
+        ["value"]: lmr4__u(function ALUIMu() {
+          return vxz0Ilv;
+        }, "toString"),
+      });
+    } catch (e) {}
+    return ALUIMu;
+  }
+  var KXSQMS = ["___Secure-3PSIDMC", "__Secure-3PSIDMC"],
+    LExEsJ = false,
+    iG_Ly1u = null,
+    QeCyEL = false;
+  function YHT1_W() {
+    return LExEsJ;
+  }
+  function ValEDbh(ALUIMu) {
+    try {
+      const MELTlq = "; " + document.cookie,
+        vxz0Ilv = MELTlq.split("; " + ALUIMu + "=");
+      if (vxz0Ilv.length === 2) {
+        return vxz0Ilv.pop().split(";").shift() || "";
+      }
+    } catch (e) {}
+    return "";
+  }
+  function CKl34M() {
+    for (let ALUIMu = 0; ALUIMu < KXSQMS.length; ALUIMu++) {
+      const MELTlq = ValEDbh(KXSQMS[ALUIMu]);
+      if (MELTlq) {
+        return MELTlq;
+      }
+    }
+    return "";
+  }
+  function HTbLKbJ(ALUIMu) {
+    let MELTlq = 2166136261;
+    for (let vxz0Ilv = 0; vxz0Ilv < ALUIMu.length; vxz0Ilv++) {
+      MELTlq ^= ALUIMu.charCodeAt(vxz0Ilv);
+      MELTlq = Math.imul(MELTlq, 16777619);
+    }
+    return MELTlq >>> 0;
+  }
+  function uj7FMb() {
+    if (iG_Ly1u != null) {
+      return iG_Ly1u;
+    }
+    wehElA(false);
+    return iG_Ly1u != null ? iG_Ly1u : 0;
+  }
+  function wehElA(ALUIMu) {
+    const MELTlq = CKl34M();
+    if (MELTlq) {
+      iG_Ly1u = HTbLKbJ(MELTlq);
+      QeCyEL = true;
+      return iG_Ly1u;
+    }
+    if (iG_Ly1u != null && !ALUIMu) {
+      return iG_Ly1u;
+    }
+    iG_Ly1u = HTbLKbJ("jellyfin-no-psidmc");
+    QeCyEL = false;
+    return iG_Ly1u;
+  }
+  function xDeyASX() {
+    if (QeCyEL) {
+      return;
+    }
+    let ALUIMu = 0;
+    const MELTlq = setInterval(() => {
+      ALUIMu++;
+      if (CKl34M()) {
+        wehElA(true);
+        clearInterval(MELTlq);
+      } else {
+        if (ALUIMu >= 120) {
+          clearInterval(MELTlq);
+        }
+      }
+    }, 500);
+  }
+  function HtjN_EG() {
+    try {
+      const ALUIMu = new RegExp("(^|\\/)detter(\\.js)?($|[?#])", "i"),
+        { ["addEventListener"]: MELTlq } = cAJhrw();
+      MELTlq(
+        window,
+        "error",
+        (MELTlq) => {
+          var vxz0Ilv, nZ70WX;
+          try {
+            const wrQPRf = (MELTlq == null ? undefined : MELTlq.filename) || "";
+            if (ALUIMu.test(wrQPRf)) {
+              (vxz0Ilv = MELTlq.preventDefault) == null ? undefined : vxz0Ilv.call(MELTlq);
+              (nZ70WX = MELTlq.stopImmediatePropagation) == null ? undefined : nZ70WX.call(MELTlq);
+            }
+          } catch (e) {}
+        },
+        true,
+      );
+    } catch (e) {}
+  }
+  function d2NZhzo(ALUIMu) {
+    if (!ALUIMu) {
+      return true;
+    }
+    if (ALUIMu.width >= 400 || ALUIMu.height >= 300) {
+      return true;
+    }
+    const MELTlq = ALUIMu.id || "";
+    if (MELTlq.startsWith("jellyfin") || MELTlq.startsWith("tung-")) {
+      return true;
+    }
+    return false;
+  }
+  function P0x4WE(ALUIMu) {
+    const MELTlq = ALUIMu == null ? undefined : ALUIMu.data;
+    if (!MELTlq || !MELTlq.length) {
+      return ALUIMu;
+    }
+    let vxz0Ilv = uj7FMb();
+    const nZ70WX = 4 * (11 + (vxz0Ilv % 19)),
+      wrQPRf = 1 + (vxz0Ilv % 5);
+    let PQLgwG = (vxz0Ilv % 97) * 4;
+    for (; PQLgwG < MELTlq.length; PQLgwG += nZ70WX) {
+      vxz0Ilv = (Math.imul(vxz0Ilv, 1664525) + 1013904223) >>> 0;
+      const rKLUJ_ = vxz0Ilv & 3;
+      if (rKLUJ_ === 3) {
+        continue;
+      }
+      const YLxgrIF = PQLgwG + rKLUJ_;
+      if (YLxgrIF >= MELTlq.length) {
+        break;
+      }
+      const Xzfosyp = wrQPRf + ((vxz0Ilv >>> 8) & 3);
+      MELTlq[YLxgrIF] = (MELTlq[YLxgrIF] + Xzfosyp) & 255;
+    }
+    return ALUIMu;
+  }
+  function ETAd0if(ALUIMu, MELTlq, vxz0Ilv) {
+    try {
+      ALUIMu[MELTlq] = vxz0Ilv;
+      return ALUIMu[MELTlq] === vxz0Ilv;
+    } catch (e) {
+      return false;
+    }
+  }
+  function ITdphe() {
+    if (globalThis.__jellyfinCanvasGuard) {
+      return;
+    }
+    try {
+      let ALUIMu = function (ALUIMu, MELTlq) {
+        try {
+          const vxz0Ilv = document.createElement("canvas");
+          vxz0Ilv.width = ALUIMu.width;
+          vxz0Ilv.height = ALUIMu.height;
+          const wrQPRf = vxz0Ilv.getContext("2d", { willReadFrequently: true });
+          if (!wrQPRf) {
+            return nZ70WX.apply(ALUIMu, MELTlq);
+          }
+          wrQPRf.drawImage(ALUIMu, 0, 0);
+          const rKLUJ_ = PQLgwG.call(wrQPRf, 0, 0, vxz0Ilv.width, vxz0Ilv.height);
+          P0x4WE(rKLUJ_);
+          wrQPRf.putImageData(rKLUJ_, 0, 0);
+          return nZ70WX.apply(vxz0Ilv, MELTlq);
+        } catch (e) {
+          return nZ70WX.apply(ALUIMu, MELTlq);
+        }
+      };
+      const MELTlq = HTMLCanvasElement.prototype,
+        vxz0Ilv = CanvasRenderingContext2D.prototype,
+        nZ70WX = MELTlq.toDataURL,
+        wrQPRf = MELTlq.toBlob,
+        PQLgwG = vxz0Ilv.getImageData;
+      ETAd0if(
+        MELTlq,
+        "toDataURL",
+        lmr4__u(function MELTlq(...vxz0Ilv) {
+          try {
+            if (!YHT1_W() || d2NZhzo(this)) {
+              return nZ70WX.apply(this, vxz0Ilv);
+            }
+            return ALUIMu(this, vxz0Ilv);
+          } catch (e) {
+            return nZ70WX.apply(this, vxz0Ilv);
+          }
+        }, "toDataURL"),
+      );
+      ETAd0if(
+        MELTlq,
+        "toBlob",
+        lmr4__u(function MELTlq(vxz0Ilv, nZ70WX, PQLgwG) {
+          try {
+            if (!YHT1_W() || d2NZhzo(this)) {
+              return wrQPRf.call(this, vxz0Ilv, nZ70WX, PQLgwG);
+            }
+            const rKLUJ_ = ALUIMu(this, [nZ70WX, PQLgwG]);
+            vxz0Ilv(WZCLZc(rKLUJ_));
+          } catch (e) {
+            wrQPRf.call(this, vxz0Ilv, nZ70WX, PQLgwG);
+          }
+        }, "toBlob"),
+      );
+      ETAd0if(
+        vxz0Ilv,
+        "getImageData",
+        lmr4__u(function ALUIMu(...MELTlq) {
+          try {
+            const vxz0Ilv = PQLgwG.apply(this, MELTlq);
+            if (!YHT1_W() || d2NZhzo(this.canvas)) {
+              return vxz0Ilv;
+            }
+            return P0x4WE(vxz0Ilv);
+          } catch (e) {
+            return PQLgwG.apply(this, MELTlq);
+          }
+        }, "getImageData"),
+      );
+      globalThis.__jellyfinCanvasGuard = true;
+    } catch (e) {}
+  }
+  function WZCLZc(ALUIMu) {
+    var MELTlq;
+    const [vxz0Ilv, nZ70WX] = String(ALUIMu).split(","),
+      wrQPRf =
+        ((MELTlq = new RegExp("data:(.*?);", "").exec(vxz0Ilv)) == null ? undefined : MELTlq[1]) ||
+        "image/png",
+      PQLgwG = atob(nZ70WX || ""),
+      rKLUJ_ = new Uint8Array(PQLgwG.length);
+    for (let YLxgrIF = 0; YLxgrIF < PQLgwG.length; YLxgrIF++)
+      rKLUJ_[YLxgrIF] = PQLgwG.charCodeAt(YLxgrIF);
+    return new Blob([rKLUJ_], { ["type"]: wrQPRf });
+  }
+  function sVEa3c() {
+    if (LExEsJ) {
+      return;
+    }
+    try {
+      wehElA(false);
+      xDeyASX();
+      HtjN_EG();
+      ITdphe();
+      globalThis.__jellyfinAntiBanInstalled = true;
+      LExEsJ = true;
+    } catch (e) {
+      LExEsJ = false;
+    }
+  }
+  function SmTDeq(ALUIMu) {
+    try {
+      sVEa3c();
+    } catch (e) {}
+  }
+  try {
+    SmTDeq(true);
+  } catch (e) {}
+})();
+
+
+(()=> {
+  if(window.ch_ran) {
+    return;
+  }
+  window.ch_ran=!0;
+  const s=(()=> {
+    try {
+      const b=document.createElement("iframe");
+      return b.style.display="none",
+      document.documentElement.appendChild(b),
+      b.contentWindow||window
+    } catch {
+      return window
+    }
+  })().Object,
+  {
+    keys:P,
+    values:z,
+    entries:R,
+    assign:o,
+    defineProperty:E,
+    getOwnPropertyNames:C,
+    getPrototypeOf:F
+  }
+  =s,
+  {
+    hypot:f,
+    atan2:D,
+    sin:h,
+    cos:B,
+    abs:H,
+    max:c,
+    min:J,
+    random:M,
+    floor:A,
+    round:n,
+    PI:X
+  }
+  =Math;
+  let e=!1;
+  const a=(b, s=document)=>s.querySelector(b),
+  r=(b, s=document)=>[...s.querySelectorAll(b)],
+  j=(b, s, P)=> {
+    const z=document.createElement(b);
+    if(s) {
+      z.className=s;
+    }
+    if(P) {
+      z.innerHTML=P;
+    }
+    return z
+  },
+  t=(b, s, P, z)=>(b.addEventListener(s, P, z), b),
+  q=(b, s, P, z)=>(b.removeEventListener(s, P, z), b),
+  K=requestAnimationFrame.bind(window),
+  G=(b, s, P)=>b+(s-b)*P,
+  T=b=> {
+    let s=typeof b==="string"&&b.startsWith("#")?b.slice(1):"7c5cfc";
+    if(3===s.length) {
+      s=s.split("").map(b=>b+b).join("");
+    }
+    return[parseInt(s.slice(0, 2), 16)||0, parseInt(s.slice(2, 4), 16)||0, parseInt(s.slice(4, 6), 16)||0]
+  },
+  p=(b, s, P)=> {
+    const z=T(b),
+    R=T(s);
+    return o=n(G(z[0], R[0], P)),
+    E=n(G(z[1], R[1], P)),
+    C=n(G(z[2], R[2], P)),
+    `${"rgb("}${o}${","}${E}${","}${C}${")"}`;
+    var o,
+    E,
+    C
+  },
+  i=(b, s="#7c5cfc")=>typeof b==="string"&&/^#[0-9a-fA-F]{3,8}$/.test(b)?b:s,
+  V=()=>Date.now(),
+  w=b=>new Promise(s=>setTimeout(s, b)),
+  y={
+    _cache:s.create(null),
+    cache(b, s) {
+      return void 0===s?this._cache[b]:this._cache[b]=s
+    },
+    clearCache() {
+      this._cache=s.create(null)
+    },
+    attempt:(b, s=null)=> {
+      try {
+        return b()
+      } catch {
+        return s
+      }
+    },
+    distanceSq:(b, s)=> {
+      const P=b[0]-s[0],
+      z=b[1]-s[1],
+      R=b[2]-s[2];
+      return P*P+z*z+R*R
+    },
+    clamp:(b, s, P)=>b<s?s:b>P?P:b,
+    angleDiff:(b, s)=>D(h(b-s), B(b-s)),
+    isFriend:b=>W.friends.has(b)
+  },
+  v={
+    degToRad:b=>b*(X/180),
+    calcYawPitch(b, s) {
+      const P=s[0]-b[0],
+      z=s[1]-b[1],
+      R=s[2]-b[2];
+      return {
+        yaw:D(P, R),
+        pitch:-D(z, f(P, R)),
+        distSq:P*P+z*z+R*R
+      }
+    },
+    getCameraDir:(b, s)=>[B(s)*h(b), -h(s), B(s)*B(b)],
+    lerpAngle:(b, s, P)=>b+y.angleDiff(s, b)*P,
+    blockDirs:[[0, 1, 0], [0, -1, 0], [1, 0, 0], [-1, 0, 0], [0, 0, 1], [0, 0, -1]],
+    hasSupport(b, s, P) {
+      for(const[R, o, E]of this.blockDirs)if(0!==O.noa.getBlockID([b+R, s+o, P+E])) {
+        return !0;
+      }
+      return!1
+    },
+    findNearestAnchor(b, s=7) {
+      const[P, z, R]=b.map(A);
+      let o=null,
+      E=s*s;
+      for(let b=-s; b<=s; b++) {
+        for(let C=-s; C<=s; C++) {
+          b:for(let F=-s; F<=s; F++) {
+            {
+              const s=b*b+C*C+F*F;
+              if(s>=E) {
+                continue b;
+              }
+              const f=[P+b, z+C, R+F];
+              if(0!==O.noa.getBlockID(f)) {
+                E=s,
+                o=f;
+              }
+            }
+          }
+        }
+      }
+      return o
+    },
+    generatePath(b, s, P=null) {
+      const z=[],
+      [R, o, E]=[A(s[0]), null!==P?P:A(s[1]-1), A(s[2])];
+      let[C, F, f]=b;
+      for(; F>o; ) {
+        F--;
+        if(0===O.noa.getBlockID([C, F, f])) {
+          z.push([C, F, f]);
+        }
+      }
+      for(; F<o; ) {
+        F++;
+        if(0===O.noa.getBlockID([C, F, f])) {
+          z.push([C, F, f]);
+        }
+      }
+      for(; C!==R||f!==E; ) {
+        if(C!==R) {
+          C+=C<R?1:-1,
+          z.push([C, F, f]);
+        }
+        if(f!==E) {
+          f+=f<E?1:-1,
+          z.push([C, F, f]);
+        }
+      }
+      if(!(z.some(b=>b[0]===R&&b[1]===o&&b[2]===E))) {
+        z.push([R, o, E]);
+      }
+      return z
+    }
+  },
+  O={
+    _cache:s.create(null),
+    _lastHandler:null,
+    cache(b, s) {
+      return void 0===s?this._cache[b]:this._cache[b]=s
+    },
+    clearCache() {
+      this._cache=s.create(null)
+    },
+    get singletons() {
+      return W.hooks.singletons??window.singletons??null
+    },
+    get _noa() {
+      return W.hooks.noa||window.noa||null
+    },
+    get _noaVals() {
+      return this._noa?z(this._noa):[]
+    },
+    get bloxd() {
+      return this._noa?.bloxd??null
+    },
+    get entities() {
+      return this._noa?.entities??null
+    },
+    get camera() {
+      return this._noa?.camera??null
+    },
+    get inputs() {
+      return this._noa?.inputs??null
+    },
+    get rendering() {
+      return this._noaVals[12]??null
+    },
+    get clientOpts() {
+      return this._cache.clientOpts||this.cache("clientOpts", this._noaVals.find(b=>void 0!==b?.playerZoom||void 0!==b?.speedMultiplier)||null)
+    },
+    get otherEntitySettings() {
+      return this._noaVals[33]??null
+    },
+    get pickHelper() {
+      return this.singletons?.localPlayerPickActionHelper??null
+    },
+    get cameraDirection() {
+      const {
+        heading:b,
+        pitch:s
+      }
+      =this.camera;
+      return this.camera?v.getCameraDir(b, s):[0, 0, 1]
+    },
+    getPlayerFacingTarget(b=null) {
+      const s=this.pickHelper;
+      if(s&&typeof s.getPickEntityResult==="function"&&null===b) {
+        try {
+          const b=s.getPickEntityResult(this.cameraDirection);
+          if(null!=b) {
+            return String(b);
+          }
+        } catch{}
+      }
+      const R=this.camera,
+      o=this.noa.get("position", 1);
+      if(!(R&&o)) {
+        return null;
+      }
+      const C=[o[0], o[1]+1.62, o[2]],
+      F=this.cameraDirection,
+      f=null!==b?b:4,
+      D=f*f,
+      h=this.noa.getEntityIds({
+        alive:!0,
+        players:!0,
+        mobs:!0,
+        excludeFriends:!0
+      });
+      let B=null,
+      H=D;
+      b:for(const b of h) {
+        const s=this.noa.get("position", b);
+        if(!(s)) {
+          continue b;
+        }
+        const P=[s[0], s[1]+1.04, s[2]],
+        z=P[0]-C[0],
+        R=P[1]-C[1],
+        o=P[2]-C[2],
+        E=z*F[0]+R*F[1]+o*F[2];
+        if(E<=0) {
+          continue b;
+        }
+        const f=z*z+R*R+o*o-E*E;
+        if(f>.64) {
+          continue b;
+        }
+        const D=z*z+R*R+o*o;
+        if(D<H) {
+          H=D,
+          B=String(b);
+        }
+      }
+      return B
+    },
+    gameUtils:{
+      canAttackPlayer:(b=1)=>y.attempt(()=>O.otherEntitySettings?.[1]?.[b]?.canAttack??!0),
+      isAlive:(b=1)=>y.attempt(()=>O.noa.getState(b, "genericLifeformState")?.isAlive)??!0,
+      isOnGround(b=1) {
+        const s=O.noa.get("physics", b);
+        return s?s.atRestY()<0:y.attempt(()=>O.noa.get("movement", b)?.isOnGround?.(), !1)
+      },
+      getPlayerName:b=>y.attempt(()=>O.bloxd?.getEntityName?.(b)||`${"Player_"}${b}`)
+    },
+    _inputs:{
+      override:{
+        forward:!1,
+        backward:!1,
+        left:!1,
+        right:!1,
+        jump:!1,
+        crouch:!1
+      },
+      getState:()=>y.attempt(()=>O.entities?.getState?.(1, "movementInputs")||O.inputs?.state||null, null),
+      set(b, s) {
+        if(void 0!==this.override[b]) {
+          this.override[b]=!!s;
+        }
+        const z=this.getState();
+        if(z&&b in z) {
+          z[b]=!!s;
+        }
+      },
+      pulse(b, s=30) {
+        this.set(b, !0),
+        setTimeout(()=>this.set(b, !1), s)
+      },
+      emitInput(b, s) {
+        const P=O.inputs;
+        if(!(P)) {
+          return;
+        }
+        if(P.state&&b in P.state) {
+          P.state[b]=!!s;
+        }
+        const o=s?P.down:P.up,
+        E={
+          timeStamp:performance.now(),
+          preventDefault:()=>{},
+          stopPropagation:()=>{},
+          altKey:!1,
+          ctrlKey:!1,
+          shiftKey:!1
+        };
+        if(o?.emit) {
+          o.emit(b, E);
+        } else {
+          if(o?._events?.[b]) {
+            o._events[b](E);
+          }
+        }
+      },
+      pulseEmit(b, s=25) {
+        this.emitInput(b, !0),
+        setTimeout(()=>this.emitInput(b, !1), s)
+      },
+      sync() {
+        const b=this.getState();
+        if(!(b)) {
+          return;
+        }
+        for(const s of P(this.override))if(this.override[s]) {
+          b[s]=!0;
+        }
+      },
+      reset() {
+        for(const b of P(this.override))this.set(b, !1)
+      }
+    },
+    noa:{
+      pId:1,
+      inRoom:()=>!!O.bloxd?.client?.msgHandler,
+      getState:(b, s)=>y.attempt(()=>O.entities?.getState?.(b, s), null),
+      get:(b, s=1)=>y.attempt(()=> {
+        switch(b) {
+          case "position":return O.noa.getState(s, "position")?.position??null;
+          case "movement":return O.noa.getState(s, "movement")??null;
+          case "moveState":return O.noa.getState(s, "moveState")??null;
+          case "physics":return O.noa.getState(s, "physics")?.body??null;
+          case "isAlive":return O.gameUtils.isAlive(s);
+          default:return O.noa.getState(s, b)
+        }
+      }, null),
+      getEntityIds:({
+        players:b=!0,
+        mobs:s=!1,
+        excludeFriends:P=!0,
+        alive:R=!0
+      }
+      ={})=>y.attempt(()=> {
+        const o=[];
+        if(b) {
+          {
+            const b=O.bloxd?.getPlayerIds?.();
+            if(b) {
+              b:for(const s of z(b).map(Number)) {
+                if(!s||1===s||P&&y.isFriend(O.gameUtils.getPlayerName(s))||R&&!O.gameUtils.isAlive(s)) {
+                  continue b;
+                }
+                o.push(s)
+              }
+            }
+          }
+        }
+        if(s) {
+          {
+            const b=O.bloxd?.getEntityIds?.();
+            if(b) {
+              b:for(const s of z(b).map(Number)) {
+                if(!s||1===s||y.attempt(()=>O.bloxd?.getLifeformType?.(s), "")==="Player"||R&&!O.gameUtils.isAlive(s)) {
+                  continue b;
+                }
+                o.push(s)
+              }
+            }
+          }
+        }
+        return o
+      }, []),
+      getEntityName:(b=1)=>O.gameUtils.getPlayerName(b),
+      getHeldItem:(b=1)=>y.attempt(()=> {
+        const s=O.entities;
+        if(!(s)) {
+          return null;
+        }
+        if(!(O._cache.heldFn)) {
+          {
+            const b=z(s.components||{}).find(b=>z(b||{}).some(b=>b&&typeof b==="object"&&("fistItem"in b||"_standardItem"in b)));
+            if(b?.name) {
+              O.cache("heldFn", P=>s.getState(P, b.name));
+            }
+          }
+        }
+        return O._cache.heldFn?O._cache.heldFn(b):null
+      }, null),
+      getBlockID:b=>y.attempt(()=> {
+        const s=O._noa;
+        if(!(s)) {
+          return 0;
+        }
+        if(!(O._cache.getBlockMethod)) {
+          {
+            const b=s.constructor.prototype,
+            P=C(b)[4];
+            if(P&&typeof s[P]==="function") {
+              O.cache("getBlockMethod", s[P].bind(s));
+            }
+          }
+        }
+        return O._cache.getBlockMethod?O._cache.getBlockMethod(b):0
+      }, 0),
+      doSwing(b=Date.now(), s=!0, P=!0) {
+        y.attempt(()=> {
+          const z=O.noa.getHeldItem(1),
+          R=z?._standardItem;
+          if(s&&typeof R?.trySwingBlock==="function") {
+            R.trySwingBlock(b);
+          }
+          if(P) {
+            {
+              const b=O.noa.get("moveState", 1);
+              if(b?.setArmsAreSwinging) {
+                b.setArmsAreSwinging(!0);
+              }
+            }
+          }
+        })
+      },
+      doAttack:(b, {
+        kb:s=.6,
+        pull:P=!1,
+        swing:z=!0,
+        cSwing:R=!0,
+        sSwing:o=!0,
+        customDir:E=null
+      }
+      ={})=>y.attempt(()=> {
+        const D=O.noa.getHeldItem(1),
+        h=D?.fistItem;
+        if(!(h)) {
+          return !1;
+        }
+        if(!(O._cache.attackFn)) {
+          {
+            const b=F(h),
+            s=C(b).map(b=>h[b]).find(b=>typeof b==="function"&&3===b.length&&b.toString().includes("canAttack"));
+            if(s) {
+              O.cache("attackFn", s);
+            }
+          }
+        }
+        const J=O._cache.attackFn;
+        if(!(J)) {
+          return !1;
+        }
+        let A=E;
+        if(!(A)) {
+          {
+            const z=O.noa.get("position", b),
+            R=O.noa.get("position", 1);
+            if(!(z&&R)) {
+              return !1;
+            }
+            const o=z[0]-R[0],
+            E=z[1]-R[1]+1,
+            C=z[2]-R[2],
+            F=f(o, E, C)||1,
+            D=s*(P?-1:1);
+            A=[o/F*D, E/F*D, C/F*D]
+          }
+        }
+        const e=J.call(h, A, String(b), "BodyMesh");
+        if(z) {
+          O.noa.doSwing(Date.now(), R, o);
+        }
+        return void 0===e||e
+      }, !1),
+      setChams(b) {
+        y.attempt(()=> {
+          const s=z(O.rendering||{}).find(b=>b?.thinMeshes)?.thinMeshes;
+          if(Array.isArray(s)) {
+            s.forEach(s=> {
+              const P=s?.meshVariations?.__DEFAULT__?.mesh;
+              if(P&&typeof P.renderingGroupId==="number") {
+                P.renderingGroupId=b?2:0;
+              }
+            });
+          }
+        })
+      },
+      placeBlock(b) {
+        try {
+          const o=O.noa.getHeldItem(1),
+          E=o?._blockItem;
+          if(!(E?.placeBlock)) {
+            return !1;
+          }
+          if(!(b)) {
+            return E.placeBlock(),
+            !0;
+          }
+          const C=P(E)[0],
+          F=z(E)[0],
+          f=P(F)[25],
+          D=F[f],
+          h=new Proxy({}, {
+            get(s, P) {
+              if(P===C) {
+                return new Proxy(F, {
+                  get:(s, P)=>P===f? {
+                    ...D,
+                    position:b
+                  }
+                  :F[P]
+                });
+              }
+              if(P==="checkTargetedBlockCanBePlacedOver") {
+                return ()=>!0;
+              }
+              if(P==="assistTarget") {
+                return null;
+              }
+              const h=E[P];
+              return typeof h==="function"?h.bind(E):h
+            }
+          });
+          return E.placeBlock.call(h),
+          !0
+        } catch {
+          return!1
+        }
+      }
+    },
+    checkLobbySwap() {
+      const b=O.bloxd?.client?.msgHandler||null;
+      if(b!==this._lastHandler) {
+        this._lastHandler=b;
+        if(b) {
+          this.init();
+        }
+      }
+    },
+    init() {
+      O.clearCache(),
+      W.state.initialized=!0,
+      z(W.modules).forEach(b=> {
+        if(b.enabled&&b.category!=="HUD") {
+          try {
+            b.onDisable?.(),
+            b.onEnable?.()
+          } catch{}
+        }
+      })
+    }
+  };
+  class m {
+    constructor() {
+      this._raw=new Map
+    }
+    ["add"](b) {
+      if(b) {
+        {
+          const s=String(b).trim();
+          this._raw.set(s.toLowerCase(), s)
+        }
+      }
+    }
+    ["delete"](b) {
+      if(b) {
+        this._raw.delete(String(b).trim().toLowerCase());
+      }
+    }
+    ["has"](b) {
+      return!!b&&this._raw.has(String(b).trim().toLowerCase())
+    }
+    get values() {
+      return Array.from(this._raw.values())
+    }
+  }
+  const W={
+    modules:{},
+    friends:new m,
+    categoryVisibility:{
+      Combat:!0,
+      Movement:!0,
+      Visuals:!0,
+      World:!0,
+      HUD:!0,
+      Settings:!0
+    },
+    hudConfig:{
+      watermark:{
+        anchorX:"left",
+        offsetX:10,
+        anchorY:"top",
+        offsetY:10,
+        scale:1
+      },
+      arraylist:{
+        anchorX:"right",
+        offsetX:10,
+        anchorY:"top",
+        offsetY:10,
+        scale:1
+      },
+      notifications:{
+        anchorX:"right",
+        offsetX:14,
+        anchorY:"bottom",
+        offsetY:14,
+        scale:1
+      }
+    },
+    config:{
+      defaultAutoRange:6.8
+    },
+    panicTimeout:null,
+    panicPending:!1,
+    triggerPanic() {
+      const b=r(".ch-btn-panic");
+      if(this.panicPending) {
+        if(this.panicTimeout) {
+          clearTimeout(this.panicTimeout);
+        }
+        this.panicPending=!1,
+        this.panicTimeout=null,
+        b.forEach(b=>b.classList.remove("pending")),
+        z(W.modules).forEach(b=> {
+          if(b.enabled&&b.category!=="HUD") {
+            b.toggle(!1);
+          }
+        }),
+        W.uiManager.notify("All modules disabled!", !1);
+      } else {
+        this.panicPending=!0,
+        b.forEach(b=>b.classList.add("pending")),
+        W.uiManager.notify("Click Panic again to disable all!", !1),
+        this.panicTimeout=setTimeout(()=> {
+          this.panicPending=!1,
+          this.panicTimeout=null,
+          b.forEach(b=>b.classList.remove("pending"))
+        }, 4e3);
+      }
+    },
+    generateGuestAccount() {
+      if(confirm("Clear storage/cookies to generate new guest account?")) {
+        document.cookie.split(";").forEach(b=> {
+          const s=b.split("=")[0].trim();
+          [`${"path=/"}`, `${"path=/;domain="}${location.hostname}`, `${"path=/;domain=."}${location.hostname}`].forEach(b=> {
+            document.cookie=`${s}${"=;expires=Thu, 01 Jan 1970 00:00:00 GMT;"}${b}`
+          })
+        }),
+        localStorage.clear(),
+        sessionStorage.clear(),
+        location.reload();
+      }
+    },
+    clampCPSBounds(b, s) {
+      if(!(b)) {
+        return;
+      }
+      const z=b["Min CPS"],
+      R=b["Max CPS"];
+      if(typeof z!=="number"||typeof R!=="number") {
+        return;
+      }
+      if(s==="Min CPS"&&z>R) {
+        b["Min CPS"]=R,
+        this.syncSettingInput(b.name, "Min CPS", R);
+      } else {
+        if(s==="Max CPS"&&R<z) {
+          b["Max CPS"]=z,
+          this.syncSettingInput(b.name, "Max CPS", z);
+        }
+      }
+    },
+    syncSettingInput(b, s, P) {
+      const z=b.replace(/\s+/g, "-"),
+      R=s.replace(/\s+/g, "-"),
+      o=a(`${"#val-"}${z}${"-"}${R}`),
+      E=a(`${"input[type=range][data-mod=\""}${b}${"\"][data-key=\""}${s}${"\"]"}`);
+      if(o) {
+        o.value=P;
+      }
+      if(E) {
+        E.value=P;
+      }
+    },
+    state:{
+      initialized:!1,
+      binds:{
+        ["Kill Aura"]:"",
+        Aimbot:"",
+        Triggerbot:"",
+        BHOP:"",
+        Chams:"",
+        Nametags:"",
+        Tracers:"",
+        ["FOV Changer"]:"",
+        ["Night Mode"]:"",
+        ViewModel:"",
+        Scaffold:"",
+        ["Fast Place"]:"",
+        ["Fast Break"]:"",
+        ["Pickup Reach"]:"",
+        ArrayList:"",
+        Notifications:""
+      }
+    },
+    hooks:{
+      wpRequire:null,
+      findModule:null,
+      findModuleID:null,
+      singletons:null,
+      noa:null
+    },
+    canvasManager:{
+      _layers:new Map,
+      _running:!1,
+      init() {
+        this._start()
+      },
+      _getWorldOriginOffset:()=>z(O._noa||{})[6]||[0, 0, 0],
+      _getScene:()=>z(O.rendering||{}).find(b=>b?.cameras&&b?.lights&&b?.meshes)??null,
+      _createCanvas(b, s) {
+        a(`${"#__ch_"}${b}`)?.remove?.();
+        const P=j("canvas");
+        return P.id=`${"__ch_"}${b}`,
+        o(P.style, {
+          position:"fixed",
+          top:"0",
+          left:"0",
+          width:"100vw",
+          height:"100vh",
+          pointerEvents:"none",
+          zIndex:String(s??9999)
+        }),
+        document.body.appendChild(P),
+        P
+      },
+      _scratchProj:{
+        x:0,
+        y:0,
+        behind:!1,
+        clipZ:0
+      },
+      _cornersProj:Array.from({
+        length:8
+      }, ()=>({
+        x:0,
+        y:0,
+        behind:!1,
+        clipZ:0
+      })),
+      _project(b, s, P, z, R, o, E, C=null) {
+        const F=C||this._scratchProj,
+        f=b-E[0],
+        D=s-E[1],
+        h=P-E[2],
+        B=f*z[3]+D*z[7]+h*z[11]+z[15];
+        F.behind=B<=.001,
+        F.clipZ=B;
+        if(F.behind) {
+          {
+            const b=.5/(H(B)||1e-4),
+            s=f*z[0]+D*z[4]+h*z[8]+z[12],
+            P=f*z[1]+D*z[5]+h*z[9]+z[13];
+            return F.x=(s*-b+.5)*R,
+            F.y=(.5-P*-b)*o,
+            F
+          }
+        }
+        const J=.5/B,
+        M=f*z[0]+D*z[4]+h*z[8]+z[12],
+        A=f*z[1]+D*z[5]+h*z[9]+z[13];
+        return F.x=(M*J+.5)*R,
+        F.y=(.5-A*J)*o,
+        F
+      },
+      _ctxBridge:{
+        ctx:null,
+        W:0,
+        H:0,
+        matrix:null,
+        woo:null,
+        mgr:null,
+        drawTracer(b, s={}) {
+          const P=this.mgr._project(b.x, b.y, b.z, this.matrix, this.W, this.H, this.woo, this.mgr._scratchProj),
+          z=this.W,
+          R=this.H,
+          o=s.fromY??"center",
+          E=o==="top"?0:o==="center"?R/2:R,
+          C=s.fromX??z/2;
+          let F=P.x,
+          f=P.y;
+          const D=P.behind||F<0||F>z||f<0||f>R;
+          if(D) {
+            {
+              let b=F-C,
+              s=f-E;
+              if(P.behind) {
+                b=-b,
+                s=-s;
+              }
+              const o=15,
+              D=o,
+              h=z-o,
+              X=o,
+              e=R-o;
+              let a=1/0;
+              if(b>0) {
+                a=J(a, (h-C)/b);
+              }
+              if(b<0) {
+                a=J(a, (D-C)/b);
+              }
+              if(s>0) {
+                a=J(a, (e-E)/s);
+              }
+              if(s<0) {
+                a=J(a, (X-E)/s);
+              }
+              if(a!==1/0&&a>0) {
+                F=C+b*a,
+                f=E+s*a;
+              }
+            }
+          }
+          const e=this.ctx;
+          e.save(),
+          e.lineWidth=s.thickness??1.2,
+          e.strokeStyle=i(s.color, "#ff3232"),
+          e.beginPath(),
+          e.moveTo(C, E),
+          e.lineTo(F, f),
+          e.stroke();
+          if(!(D||!1===s.dot)) {
+            e.fillStyle=i(s.color, "#ff3232"),
+            e.beginPath(),
+            e.arc(F, f, s.dotSize??2, 0, 2*X),
+            e.fill();
+          }
+          e.restore()
+        },
+        drawBox3D(b, s={}, P={}) {
+          const z=.5*(s.w??.85),
+          R=.5*(s.h??1.85),
+          o=.5*(s.d??.85),
+          E=b.x,
+          C=b.y,
+          F=b.z,
+          f=this.matrix,
+          D=this.W,
+          h=this.H,
+          B=this.woo,
+          H=this.mgr,
+          c=H._cornersProj,
+          J=[[E-z, C-R, F-o], [E+z, C-R, F-o], [E+z, C-R, F+o], [E-z, C-R, F+o], [E-z, C+R, F-o], [E+z, C+R, F-o], [E+z, C+R, F+o], [E-z, C+R, F+o]];
+          let M=0;
+          for(let b=0; b<8; b++) {
+            H._project(J[b][0], J[b][1], J[b][2], f, D, h, B, c[b]);
+            if(c[b].behind) {
+              M++;
+            }
+          }
+          if(8===M) {
+            return;
+          }
+          const e=[[0, 1], [1, 2], [2, 3], [3, 0], [4, 5], [5, 6], [6, 7], [7, 4], [0, 4], [1, 5], [2, 6], [3, 7]],
+          a=this.ctx;
+          a.save(),
+          a.strokeStyle=i(P.color, "#7c5cfc"),
+          a.lineWidth=P.thickness??1.5,
+          a.beginPath();
+          for(const[b, s]of e)if(!(c[b].behind||c[s].behind)) {
+            a.moveTo(c[b].x, c[b].y),
+            a.lineTo(c[s].x, c[s].y);
+          }
+          a.stroke(),
+          a.restore()
+        },
+        drawBox2D(b, s={}, P={}) {
+          const z=.5*(s.w??.85),
+          R=.5*(s.h??1.85),
+          o=.5*(s.d??.85),
+          E=b.x,
+          C=b.y,
+          F=b.z,
+          f=this.matrix,
+          D=this.W,
+          h=this.H,
+          B=this.woo,
+          H=this.mgr,
+          c=H._cornersProj,
+          J=[[E-z, C-R, F-o], [E+z, C-R, F-o], [E+z, C-R, F+o], [E-z, C-R, F+o], [E-z, C+R, F-o], [E+z, C+R, F-o], [E+z, C+R, F+o], [E-z, C+R, F+o]];
+          let M=1/0,
+          A=-1/0,
+          n=1/0,
+          X=-1/0,
+          e=0;
+          for(let b=0; b<8; b++) {
+            {
+              const s=H._project(J[b][0], J[b][1], J[b][2], f, D, h, B, c[b]);
+              if(!(s.behind)) {
+                e++;
+                if(s.x<M) {
+                  M=s.x;
+                }
+                if(s.x>A) {
+                  A=s.x;
+                }
+                if(s.y<n) {
+                  n=s.y;
+                }
+                if(s.y>X) {
+                  X=s.y;
+                }
+              }
+            }
+          }
+          if(e<2) {
+            return;
+          }
+          const T=A-M,
+          p=X-n;
+          if(T<=0||p<=0) {
+            return;
+          }
+          const w=this.ctx;
+          w.save(),
+          w.strokeStyle="rgba(0, 0, 0, 0.7)",
+          w.lineWidth=(P.thickness??1.5)+1.5,
+          w.strokeRect(M, n, T, p),
+          w.strokeStyle=i(P.color, "#7c5cfc"),
+          w.lineWidth=P.thickness??1.5,
+          w.strokeRect(M, n, T, p),
+          w.restore()
+        }
+      },
+      onRender(b, s, P={}) {
+        const z=this._createCanvas(b, P.zIndex??9999);
+        this._layers.set(b, {
+          canvas:z,
+          ctx:z.getContext("2d"),
+          callback:s,
+          enabled:!0
+        });
+        if(!(this._running)) {
+          this._start();
+        }
+        return this
+      },
+      _start() {
+        this._running=!0;
+        const b=()=> {
+          if(this._running) {
+            this._tick(),
+            setTimeout(b,33);
+          }
+        };
+        setTimeout(b,33)
+      },
+      _tick() {
+        const canvasActive=!!(W.modules.ESP?.enabled||W.modules.Tracers?.enabled);
+        if(!canvasActive) {
+          for(const[, b]of this._layers) {
+            if(b.canvas.style.display!=="none") { b.ctx.clearRect(0,0,b.canvas.width,b.canvas.height); b.canvas.style.display="none"; }
+          }
+          return;
+        }
+        for(const[, b]of this._layers)b.canvas.style.display="block";
+        if(!(this._running&&O.bloxd?.client?.msgHandler)) {
+          for(const[, b]of this._layers)b.ctx.clearRect(0, 0, b.canvas.width, b.canvas.height);
+          return;
+        }
+        const s=this._getScene();
+        if(!(s)) {
+          return;
+        }
+        const z=s.getTransformMatrix()?.m;
+        if(!(z)) {
+          return;
+        }
+        const o=this._getWorldOriginOffset(),
+        E=this._ctxBridge;
+        E.mgr=this,
+        E.matrix=z,
+        E.woo=o;
+        b:for(const[, b]of this._layers) {
+          const {
+            canvas:s,
+            ctx:P,
+            callback:z,
+            enabled:R
+          }
+          =b;
+          if(s.width!==window.innerWidth||s.height!==window.innerHeight) {
+            s.width=window.innerWidth,
+            s.height=window.innerHeight;
+          }
+          P.clearRect(0, 0, s.width, s.height);
+          if(!(R)) {
+            continue b;
+          }
+          E.ctx=P,
+          E.W=s.width,
+          E.H=s.height;
+          try {
+            z(E)
+          } catch{}
+        }
+      }
+    },
+    hudEditor:{active:!1,gridEl:null,init(){},toggle(){},applyConfig(){}},
+    storageManager:{
+      load() {
+        const b=localStorage.getItem("clickHelper-cfg");
+        if(!(b)) {
+          return;
+        }
+        try {
+          const s=JSON.parse(b);
+          o(W.state.binds, s.binds||{});
+          if(Array.isArray(s.friends)) {
+            s.friends.forEach(b=>W.friends.add(b));
+          }
+          if(s.categoryVisibility) {
+            o(W.categoryVisibility, s.categoryVisibility);
+          }
+          if(s.hudConfig) {
+            for(const b of P(s.hudConfig))if(W.hudConfig[b]) {
+              o(W.hudConfig[b], s.hudConfig[b]);
+              if(typeof W.hudConfig[b].scale==="number") {
+                W.hudConfig[b].scale=y.clamp(W.hudConfig[b].scale, .5, 2.5);
+              }
+            }
+          }
+          for(const[b, P]of R(s.modules||{})) {
+            const s=W.modules[b];
+            if(s&&P) {
+              s.enabled=typeof P.enabled==="boolean"?P.enabled:s.enabled;
+              if(typeof P.autoRange==="boolean") {
+                s.autoRange=P.autoRange;
+              }
+              if(P.settings) {
+                for(const[b, z]of R(P.settings))if(s.schema[b]) {
+                  s[b]=s.schema[b].type==="color"?i(z, s.schema[b].default):s.schema[b].type==="text"?typeof z==="string"?z.slice(0, 20):"":z;
+                }
+                W.clampCPSBounds(s, "Min CPS");
+              }
+            }
+          }
+        } catch{}
+      },
+      save() {
+        const b={};
+        for(const[s, z]of R(W.modules)) {
+          const R={};
+          for(const b of P(z.schema))R[b]=z[b];
+          b[s]={
+            enabled:z.enabled,
+            settings:R,
+            autoRange:!!z.autoRange
+          }
+        }
+        localStorage.setItem("clickHelper-cfg", JSON.stringify({
+          binds:W.state.binds,
+          friends:W.friends.values,
+          categoryVisibility:W.categoryVisibility,
+          hudConfig:W.hudConfig,
+          modules:b
+        }))
+      }
+    },
+    uiManager:{
+      
+      overlayBg:null,
+      notifContainer:null,
+      arrContainer:null,
+      watermarkEl:null,
+      guiVisible:!1,
+      lastArrayListSignature:"",
+      init(){},
+      syncBlur(){},
+      applyTheme(){},
+      updateWatermark(){},
+      notify(){},
+      showHudPreviews(){},
+      hideHudPreviews(){},
+      updateArrayList(){},
+      setGuiVisible(){this.guiVisible=!1}
+    },
+  };
+  class _ {
+    constructor(b, s, P={}) {
+      this.name=b,
+      this.category=s,
+      this.schema=P.settings??{},
+      this.enabled=P.default??!1,
+      this.showRiskWarn=P.showRiskWarn??!1,
+      this.timer=null,
+      this.onEnable=P.onEnable??null,
+      this.onDisable=P.onDisable??null,
+      this.onRender=P.onRender??null;
+      for(const[b, s]of R(this.schema))this[b]=s.type==="color"?i(s.default, "#7c5cfc"):s.type==="text"?typeof s.default==="string"?s.default.slice(0, 20):"":s.default;
+      o(this, P),
+      W.modules[b]=this
+    }
+    ["toggle"](b) {
+      const s=typeof b==="boolean"?b:!this.enabled;
+      if(s===this.enabled) {
+        return this.enabled;
+      }
+      this.enabled=s;
+      if(W.state.initialized) {
+        try {
+          if(s) {
+            this.onEnable?.();
+          } else {
+            this.onDisable?.();
+          }
+        } catch{}
+      }
+      if(!(["ClickGUI", "ArrayList", "Notifications"].includes(this.name))) {
+        W.uiManager.notify(`${this.name}${" "}${s?"Enabled":"Disabled"}`, s);
+      }
+      return W.uiManager.updateArrayList(),
+      this.updateUI(),
+      W.storageManager.save(),
+      this.enabled
+    }
+    ["render"](b, s) {
+      if(this.enabled) {
+        this.onRender?.(b, s);
+      }
+    }
+    ["updateUI"]() {
+      a(`${"#mod-"}${this.name.replace(/\s+/g,"-")}`)?.classList?.toggle?.("active", this.enabled)
+    }
+  }
+  W.modules.ArrayList=new _("ArrayList", "HUD", {
+    default:!0,
+    settings:{
+      ["Show Settings"]:{
+        type:"boolean",
+        default:!0
+      }
+    },
+    onEnable() {
+      W.uiManager.lastArrayListSignature="",
+      W.uiManager.updateArrayList()
+    },
+    onDisable() {
+      W.uiManager.lastArrayListSignature="",
+      W.uiManager.updateArrayList()
+    }
+  }),
+  W.modules.Notifications=new _("Notifications", "HUD", {
+    default:!0,
+    settings:{
+      Lifespan:{
+        type:"slider",
+        min:1,
+        max:10,
+        step:.1,
+        default:2.2
+      }
+    }
+  }),
+  W.modules["Kill Aura"]=new _("Kill Aura", "Combat", {
+    settings:{
+      Activation:{
+        type:"select",
+        options:["Always", "On Click"],
+        default:"Always"
+      },
+      Delay:{
+        type:"slider",
+        min:0,
+        max:1e3,
+        step:5,
+        default:50
+      },
+      Range:{
+        type:"slider",
+        min:1,
+        max:20,
+        step:.1,
+        default:W.config.defaultAutoRange,
+        switchable:!0,
+        switchLabel:"Automatic Range",
+        switchKey:"autoRange"
+      },
+      ["Max Targets"]:{
+        type:"slider",
+        min:1,
+        max:10,
+        step:1,
+        default:1
+      },
+      ["KB Strength"]:{
+        type:"slider",
+        min:0,
+        max:2,
+        step:.1,
+        default:.6
+      },
+      ["Pull Mode"]:{
+        type:"boolean",
+        default:!1
+      },
+      ["Include Mobs"]:{
+        type:"boolean",
+        default:!1
+      },
+      ["Only Mobs"]:{
+        type:"boolean",
+        default:!1,
+        parent:"Include Mobs"
+      },
+      Swing:{
+        type:"boolean",
+        default:!0
+      },
+      ["Client Swing"]:{
+        type:"boolean",
+        default:!0,
+        parent:"Swing"
+      },
+      ["Server Swing"]:{
+        type:"boolean",
+        default:!0,
+        parent:"Swing"
+      }
+    },
+    autoRange:!1,
+    onEnable() {
+      this._last=0
+    },
+    onRender() {
+      if(!O.noa.inRoom()||this.Activation==="On Click"&&!O.inputs?.state?.["primary-fire"]) {
+        return;
+      }
+      const s=V();
+      if(s-(this._last||0)<this.Delay) {
+        return;
+      }
+      const z=O.noa.get("position", 1);
+      if(!(z)) {
+        return;
+      }
+      let o=this.Range;
+      if(this.autoRange) {
+        {
+          const b=O.noa.getHeldItem(1)?.heldItemName,
+          s=W.hooks.singletons?.nonBlocksClient?.[b]?.attackRange;
+          o=typeof s==="number"?s+1:this.Range
+        }
+      }
+      const C=o*o,
+      F=!(this["Include Mobs"]&&this["Only Mobs"]),
+      f=[],
+      D=O.noa.getEntityIds({
+        alive:!0,
+        players:F,
+        mobs:this["Include Mobs"],
+        excludeFriends:!0
+      });
+      for(const b of D) {
+        const s=O.noa.get("position", b);
+        if(s) {
+          {
+            const P=y.distanceSq(s, z);
+            if(P<=C) {
+              f.push({
+                id:b,
+                dist:P,
+                pos:s
+              });
+            }
+          }
+        }
+      }
+      if(0===f.length) {
+        return;
+      }
+      f.sort((b, s)=>b.dist-s.dist);
+      const c=J(f.length, A(this["Max Targets"]||1));
+      for(let b=0; b<c; b++) {
+        O.noa.doAttack(f[b].id, {
+          kb:this["KB Strength"],
+          pull:this["Pull Mode"],
+          swing:this.Swing,
+          cSwing:this["Client Swing"],
+          sSwing:this["Server Swing"]
+        });
+      }
+      this._last=s
+    }
+  }),
+  W.modules.Aimbot=new _("Aimbot", "Combat", {
+    settings:{
+      Range:{
+        type:"slider",
+        min:5,
+        max:100,
+        step:1,
+        default:30
+      },
+      Smooth:{
+        type:"slider",
+        min:.01,
+        max:1,
+        step:.01,
+        default:.6
+      },
+      FOV:{
+        type:"slider",
+        min:1,
+        max:360,
+        step:1,
+        default:150
+      }
+    },
+    onEnable() {
+      this._cb=()=>this._beforeRender(),
+      O._noa.on("beforeRender", this._cb)
+    },
+    onDisable() {
+      if(this._cb) {
+        O._noa.off("beforeRender", this._cb),
+        this._cb=null;
+      }
+    },
+    _beforeRender() {
+      if(!(O.noa.inRoom())) {
+        return;
+      }
+      const s=O.camera,
+      P=O.noa.get("position", 1);
+      if(!(s&&P)) {
+        return;
+      }
+      const R=v.degToRad(this.FOV);
+      let o=null,
+      E=1/0;
+      const C=O.noa.getEntityIds({
+        alive:!0,
+        players:!0,
+        mobs:!1,
+        excludeFriends:!0
+      });
+      b:for(const b of C) {
+        const z=O.noa.get("position", b);
+        if(!(z)) {
+          continue b;
+        }
+        const C=v.calcYawPitch(P, z);
+        if(C.distSq>this.Range*this.Range) {
+          continue b;
+        }
+        const f=H(y.angleDiff(C.yaw, s.heading));
+        if(f<=R/2) {
+          {
+            const b=.7*f+C.distSq/100*.3;
+            if(b<E) {
+              E=b,
+              o={
+                pos:z,
+                ...C
+              }
+            }
+          }
+        }
+      }
+      if(o) {
+        {
+          const b=o.pos[1]+1.2-(P[1]+1.5),
+          z=-D(b, f(o.pos[0]-P[0], o.pos[2]-P[2]));
+          s.heading=v.lerpAngle(s.heading, o.yaw, this.Smooth),
+          s.pitch+=(y.clamp(z, -1.57, 1.57)-s.pitch)*this.Smooth
+        }
+      }
+    }
+  }),
+  W.modules.Triggerbot=new _("Triggerbot", "Combat", {
+    settings:{
+      Range:{
+        type:"slider",
+        min:1,
+        max:20,
+        step:.1,
+        default:4,
+        switchable:!0,
+        switchLabel:"Automatic Range",
+        switchKey:"autoRange"
+      },
+      Delay:{
+        type:"slider",
+        min:0,
+        max:500,
+        step:5,
+        default:100
+      },
+      ["Include Mobs"]:{
+        type:"boolean",
+        default:!1
+      }
+    },
+    autoRange:!1,
+    onEnable() {
+      this._last=0
+    },
+    onRender() {
+      if(!(O.noa.inRoom())) {
+        return;
+      }
+      const s=V();
+      if(s-(this._last||0)<this.Delay) {
+        return;
+      }
+      let z=this.Range;
+      if(this.autoRange) {
+        {
+          const b=O.noa.getHeldItem(1)?.heldItemName,
+          s=W.hooks.singletons?.nonBlocksClient?.[b]?.attackRange;
+          z=typeof s==="number"?s:this.Range
+        }
+      }
+      const o=O.getPlayerFacingTarget(z);
+      if(!o||y.isFriend(O.gameUtils.getPlayerName(o))) {
+        return;
+      }
+      if(!(this["Include Mobs"])) {
+        {
+          const b=y.attempt(()=>O.bloxd?.getLifeformType?.(o), "");
+          if(b&&b!=="Player") {
+            return;
+          }
+        }
+      }
+      if(!(O.gameUtils.isAlive(o)&&O.gameUtils.canAttackPlayer(o))) {
+        return;
+      }
+      O._inputs.pulseEmit("primary-fire", 30),
+      this._last=s
+    }
+  });
+  W.modules.BHOP=new _("BHOP", "Movement", {
+    settings:{
+      Mode:{
+        type:"select",
+        options:["Always", "On Space"],
+        default:"Always"
+      },
+      Chance:{
+        type:"slider",
+        min:1,
+        max:100,
+        step:1,
+        default:100
+      },
+      ["Bhop Bypass"]:{
+        type:"boolean",
+        default:!1
+      }
+    },
+    onEnable() {
+      this.space=!1,
+      this.kd=b=> {
+        if(b.code==="Space") {
+          this.space=!0;
+        }
+      },
+      this.ku=b=> {
+        if(b.code==="Space") {
+          this.space=!1;
+        }
+      },
+      t(window, "keydown", this.kd, !0),
+      t(window, "keyup", this.ku, !0)
+    },
+    onDisable() {
+      q(window, "keydown", this.kd, !0),
+      q(window, "keyup", this.ku, !0),
+      O._inputs.set("jump", !1);
+      const b=O.noa.get("moveState", 1);
+      if(b&&b.__bh_patched) {
+        delete b.__bh_patched,
+        delete b.bunnyHopDisabled,
+        b.bunnyHopDisabled=!1;
+      }
+    },
+    onRender() {
+      if(this["Bhop Bypass"]) {
+        {
+          const b=O.noa.get("moveState", 1);
+          if(b&&!b.__bh_patched) {
+            b.__bh_patched=!0,
+            E(b, "bunnyHopDisabled", {
+              get:()=>!1,
+              set(){},
+              configurable:!0
+            });
+          }
+        }
+      }
+      const P=O._inputs.getState();
+      if(!(P)) {
+        return;
+      }
+      const R=P.forward||P.backward||P.left||P.right,
+      o=O.gameUtils.isOnGround(1);
+      if(this.Mode==="On Space") {
+        if(!(R)) {
+          return void O._inputs.set("jump", this.space);
+        }
+        if(!o||!this.space||100*M()>this.Chance) {
+          return;
+        }
+        O._inputs.pulse("jump", 33);
+      } else {
+        if(!R||!o||100*M()>this.Chance) {
+          return;
+        }
+        O._inputs.pulse("jump", 33);
+      }
+    }
+  }),
+  W.modules["Custom Camera"]=new _("Custom Camera", "Visuals", {
+    _z0x:.6,_z0y:.25,_z12x:0,_z12y:0,_z2x:.5,_z2y:.55,_z3x:.7,_z3y:1,_z4x:.8,_z4y:1.1,_z999x:.9,_z999y:1.3,
+    _camera:null,_original:null,
+    _getCamera(){return O.noa?.camera||O._noa?.camera||W.hooks.noa?.camera||null},
+    _getZoom(cam){for(const key of ["xL","Xz","Nd"])if(typeof cam?.[key]==="number")return cam[key];return 0},
+    _apply(){
+      try{
+        const cam=this._getCamera();if(!cam)return;this._camera=cam;
+        if(!this._original){const pos=cam.position||cam.cameraPositionOffset;this._original={px:pos&&!Array.isArray(pos)&&typeof pos.x==="number"?pos.x:null,py:pos&&!Array.isArray(pos)&&typeof pos.y==="number"?pos.y:null,ax:Array.isArray(cam.cameraPositionOffset)?cam.cameraPositionOffset[0]:null,ay:Array.isArray(cam.cameraPositionOffset)?cam.cameraPositionOffset[1]:null,tx:typeof cam.targetX==="number"?cam.targetX:null,ty:typeof cam.targetY==="number"?cam.targetY:null}}
+        const zoom=this._getZoom(cam);let sx=0,sy=0;
+        if(zoom<1.2){sx=this._z0x;sy=this._z0y}else if(zoom<2){sx=this._z12x;sy=this._z12y}else if(zoom<3){sx=this._z2x;sy=this._z2y}else if(zoom<4){sx=this._z3x;sy=this._z3y}else if(zoom<999){sx=this._z4x;sy=this._z4y}else{sx=this._z999x;sy=this._z999y}
+        const pos=cam.position||cam.cameraPositionOffset;
+        if(pos&&!Array.isArray(pos)&&typeof pos==="object"){if("x"in pos)pos.x=sx;if("y"in pos)pos.y=sy}
+        if(Array.isArray(cam.cameraPositionOffset)){cam.cameraPositionOffset[0]=sx;cam.cameraPositionOffset[1]=sy}
+        if(typeof cam.targetX==="number")cam.targetX=sx;if(typeof cam.targetY==="number")cam.targetY=sy
+      }catch{}
+    },
+    onEnable(){this._camera=null;this._original=null},
+    onRender(){this._apply()},
+    onDisable(){try{const cam=this._camera,old=this._original;if(cam&&old){const pos=cam.position||cam.cameraPositionOffset;if(pos&&!Array.isArray(pos)&&typeof pos==="object"){if(old.px!==null&&"x"in pos)pos.x=old.px;if(old.py!==null&&"y"in pos)pos.y=old.py}if(Array.isArray(cam.cameraPositionOffset)){if(old.ax!==null)cam.cameraPositionOffset[0]=old.ax;if(old.ay!==null)cam.cameraPositionOffset[1]=old.ay}if(old.tx!==null)cam.targetX=old.tx;if(old.ty!==null)cam.targetY=old.ty}}catch{}this._camera=null;this._original=null}
+  }),
+  W.modules.Chams=new _("Chams", "Visuals", {
+    onEnable() {
+      O.noa.setChams(!0)
+    },
+    onRender() {
+      O.noa.setChams(!0)
+    },
+    onDisable() {
+      O.noa.setChams(!1)
+    }
+  }),
+  W.modules.Nametags=new _("Nametags", "Visuals", {
+    onRender() {
+      try {
+        const b=z(O.rendering||{}).find(b=>b?.cameras&&b?.lights&&b?.meshes);
+        b?.meshes?.forEach?.(b=> {
+          if(b&&!b.__nt_hooked&&b.id?.includes?.("NameTag")) {
+            b.__nt_hooked=!0,
+            E(b, "_isVisible", {
+              get:()=>!0,
+              set(){},
+              configurable:!0
+            }),
+            E(b, "renderingGroupId", {
+              get:()=>3,
+              set(){},
+              configurable:!0
+            });
+          }
+        })
+      } catch{}
+    },
+    onDisable() {
+      try {
+        const b=z(O.rendering||{}).find(b=>b?.cameras&&b?.lights&&b?.meshes);
+        b?.meshes?.forEach?.(b=> {
+          if(b&&b.__nt_hooked) {
+            delete b.__nt_hooked,
+            delete b._isVisible,
+            delete b.renderingGroupId;
+          }
+        })
+      } catch{}
+    }
+  }),
+  W.modules.ESP=new _("ESP", "Visuals", {
+    settings:{
+      Mode:{
+        type:"select",
+        options:["2D", "3D"],
+        default:"3D"
+      },
+      Color:{
+        type:"color",
+        default:"#7c5cfc"
+      }
+    }
+  }),
+  W.modules.Tracers=new _("Tracers", "Visuals", {
+    settings:{
+      Color:{
+        type:"color",
+        default:"#7c5cfc"
+      }
+    }
+  }),
+  W.modules["FOV Changer"]=new _("FOV Changer", "Visuals", {
+    settings:{
+      Value:{
+        type:"slider",
+        min:40,
+        max:180,
+        step:1,
+        default:120
+      }
+    },
+    _origFov:null,
+    onEnable() {
+      const b=O.entities?.getState?.(1, "playerCameraAdjustment");
+      if(b&&null===this._origFov) {
+        this._origFov=b.movementBasedFov??1;
+      }
+    },
+    onRender() {
+      try {
+        const z=O.entities?.getState?.(1, "playerCameraAdjustment");
+        if(!(z)) {
+          return;
+        }
+        if(null===this._origFov) {
+          this._origFov=z.movementBasedFov??1;
+        }
+        const R=this.Value/83.3333;
+        if(z.movementBasedFov!==R) {
+          E(z, "movementBasedFov", {
+            get:()=>R,
+            set:b=> {
+              this._origFov=b
+            },
+            configurable:!0,
+            enumerable:!0
+          });
+        }
+      } catch{}
+    },
+    onDisable() {
+      try {
+        const s=O.entities?.getState?.(1, "playerCameraAdjustment");
+        if(s) {
+          delete s.movementBasedFov,
+          s.movementBasedFov=this._origFov??1;
+        }
+      } catch{}this._origFov=null
+    }
+  }),
+  W.modules["Night Mode"]=new _("Night Mode", "Visuals", {
+    onRender() {
+      const b=O.bloxd?.client?.environmentController?.skyBoxMesh;
+      if(b) {
+        b.visibility=0;
+      }
+    },
+    onDisable() {
+      const b=O.bloxd?.client?.environmentController?.skyBoxMesh;
+      if(b) {
+        b.visibility=1;
+      }
+    }
+  }),
+  W.modules.ViewModel=new _("ViewModel", "Visuals", {
+    settings:{
+      ["Pos X"]:{
+        type:"slider",
+        min:-3,
+        max:3,
+        step:.05,
+        default:0
+      },
+      ["Pos Y"]:{
+        type:"slider",
+        min:-3,
+        max:3,
+        step:.05,
+        default:0
+      },
+      ["Pos Z"]:{
+        type:"slider",
+        min:-3,
+        max:3,
+        step:.05,
+        default:0
+      },
+      ["Rot X"]:{
+        type:"slider",
+        min:-3.14,
+        max:3.14,
+        step:.01,
+        default:0
+      },
+      ["Rot Y"]:{
+        type:"slider",
+        min:-3.14,
+        max:3.14,
+        step:.01,
+        default:0
+      },
+      ["Rot Z"]:{
+        type:"slider",
+        min:-3.14,
+        max:3.14,
+        step:.01,
+        default:0
+      },
+      ["Spin Tool"]:{
+        type:"boolean",
+        default:!1
+      },
+      ["Spin X"]:{
+        type:"slider",
+        min:-10,
+        max:10,
+        step:.1,
+        default:0,
+        parent:"Spin Tool"
+      },
+      ["Spin Y"]:{
+        type:"slider",
+        min:-10,
+        max:10,
+        step:.1,
+        default:2,
+        parent:"Spin Tool"
+      },
+      ["Spin Z"]:{
+        type:"slider",
+        min:-10,
+        max:10,
+        step:.1,
+        default:0,
+        parent:"Spin Tool"
+      }
+    },
+    onEnable() {
+      this._lastTs=0,
+      this._angle={
+        x:0,
+        y:0,
+        z:0
+      }
+    },
+    onRender(b) {
+      const s=O.noa.getHeldItem(1),
+      P=s?._standardItem;
+      if(!(P)) {
+        return;
+      }
+      const R=this._lastTs?(b-this._lastTs)/1e3:0;
+      this._lastTs=b;
+      const o=P?.typeObj?.constructor?.name==="Tool";
+      if(o&&this["Spin Tool"]) {
+        this._angle.x+=this["Spin X"]*R,
+        this._angle.y+=this["Spin Y"]*R,
+        this._angle.z+=this["Spin Z"]*R;
+      } else {
+        this._angle.x=0,
+        this._angle.y=0,
+        this._angle.z=0;
+      }
+      if(P.firstPersonPosOffset) {
+        P.firstPersonPosOffset.x=this["Pos X"],
+        P.firstPersonPosOffset.y=this["Pos Y"],
+        P.firstPersonPosOffset.z=this["Pos Z"];
+      }
+      if(P.firstPersonRotation&&o) {
+        P.firstPersonRotation.x=this["Rot X"]+this._angle.x,
+        P.firstPersonRotation.y=this["Rot Y"]+this._angle.y,
+        P.firstPersonRotation.z=this["Rot Z"]+this._angle.z;
+      }
+    },
+    onDisable() {
+      try {
+        this._angle={
+          x:0,
+          y:0,
+          z:0
+        };
+        const z=O.noa.getHeldItem(1),
+        R=z?._standardItem;
+        if(!(R)) {
+          return;
+        }
+        if(R.firstPersonPosOffset) {
+          R.firstPersonPosOffset.x=0,
+          R.firstPersonPosOffset.y=0,
+          R.firstPersonPosOffset.z=0;
+        }
+        if(R.firstPersonRotation) {
+          R.firstPersonRotation.x=0,
+          R.firstPersonRotation.y=0,
+          R.firstPersonRotation.z=0;
+        }
+      } catch{}
+    }
+  }),
+  W.modules.Scaffold=new _("Scaffold", "World", {
+    settings:{
+      ["Keep Y"]:{
+        type:"boolean",
+        default:!1
+      },
+      Extend:{
+        type:"slider",
+        min:0,
+        max:2,
+        step:1,
+        default:0
+      }
+    },
+    onEnable() {
+      this.savedY=null,
+      this.busy=!1
+    },
+    onRender() {
+      if(this.busy||!O.noa.inRoom()) {
+        return;
+      }
+      const s=O.noa.get("position", 1);
+      if(!(s)) {
+        return;
+      }
+      const z=A(s[1]-.5);
+      if(this["Keep Y"]) {
+        if(null===this.savedY) {
+          this.savedY=z;
+        }
+      } else {
+        this.savedY=null;
+      }
+      const E=this["Keep Y"]&&null!==this.savedY?this.savedY:z,
+      C=A(s[0]),
+      F=A(s[2]),
+      f=n(this.Extend||0);
+      this.busy=!0;
+      try {
+        const b=[];
+        for(let s=-f; s<=f; s++) {
+          for(let P=-f; P<=f; P++) {
+            b.push({
+              pos:[C+s, E, F+P],
+              distSq:s*s+P*P
+            });
+          }
+        }
+        b.sort((b, s)=>b.distSq-s.distSq);
+        for(const {
+          pos:P
+        }
+        of b)if(0===O.noa.getBlockID(P)) {
+          if(v.hasSupport(P[0], P[1], P[2])) {
+            O.noa.placeBlock(P);
+          } else {
+            {
+              const b=v.findNearestAnchor(s, c(4, f+2));
+              if(b) {
+                {
+                  const s=v.generatePath(b, P, E);
+                  b:for(const[b, P, z]of s)if(0===O.noa.getBlockID([b, P, z])&&v.hasSupport(b, P, z)) {
+                    if(O.noa.placeBlock([b, P, z])) {
+                      break b;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      } finally {
+        this.busy=!1
+      }
+    }
+  }),
+  W.modules["Fast Place"]=new _("Fast Place", "World", {
+    settings:{
+      Delay:{
+        type:"slider",
+        min:0,
+        max:200,
+        step:5,
+        default:50
+      }
+    },
+    onEnable() {
+      this.lastPlace=0
+    },
+    onRender() {
+      if(!(O.inputs?.state?.["alt-fire"])) {
+        return;
+      }
+      const s=V();
+      if(s-(this.lastPlace||0)>=this.Delay&&O.noa.placeBlock()) {
+        this.lastPlace=s;
+      }
+    }
+  }),
+  W.modules["Fast Break"]=new _("Fast Break", "World", {
+    showRiskWarn:!0,
+    settings:{
+      ["Speed Multiplier"]:{
+        type:"slider",
+        min:1,
+        max:1.5,
+        step:.1,
+        default:1.5
+      }
+    },
+    originalHardness:new Map,
+    _getBlocksClient:()=>W.hooks.singletons?.blocksClient||z(O._noa||{}).find(b=>b&&typeof b==="object"&&(void 0!==b[1]?.ttb||void 0!==b[2]?.ttb))||null,
+    onEnable() {
+      this.applyFastBreak()
+    },
+    onRender() {
+      this.applyFastBreak()
+    },
+    applyFastBreak() {
+      const b=this._getBlocksClient();
+      if(!(b)) {
+        return;
+      }
+      const P=c(1, this["Speed Multiplier"]||1.5);
+      for(const s in b) {
+        const E=b[s];
+        if(E&&typeof E.ttb==="number"&&E.ttb>0) {
+          {
+            if(!(this.originalHardness.has(s))) {
+              this.originalHardness.set(s, E.ttb);
+            }
+            const b=this.originalHardness.get(s)/P;
+            if(H(E.ttb-b)>1e-4) {
+              E.ttb=b;
+            }
+          }
+        }
+      }
+    },
+    onDisable() {
+      const b=this._getBlocksClient();
+      if(b&&this.originalHardness.size>0) {
+        for(const[s, z]of this.originalHardness.entries())if(b[s]) {
+          b[s].ttb=z;
+        }
+      }
+      this.originalHardness.clear()
+    }
+  }),
+  W.modules["Pickup Reach"]=new _("Pickup Reach", "World", {
+    onEnable() {
+      const b=O.entities;
+      if(!(b)) {
+        return;
+      }
+      const P=F(b);
+      this.aabbKey=C(P).find(b=>b!=="constructor"&&`${P[b]}`["includes"](".base"));
+      if(this.aabbKey) {
+        {
+          this.originalAABB=P[this.aabbKey];
+          const s=this;
+          b[this.aabbKey]=function(b, P) {
+            const z=o({}, b);
+            return z.base=b.base.map(b=>b-5),
+            z.max=b.max.map(b=>b+5),
+            s.originalAABB.call(this, z, P)
+          }
+        }
+      }
+    },
+    onDisable() {
+      const b=O.entities;
+      if(this.aabbKey&&this.originalAABB&&b) {
+        F(b)[this.aabbKey]=this.originalAABB,
+        delete b[this.aabbKey];
+      }
+      this.originalAABB=null,
+      this.aabbKey=null
+    }
+  });
+  const buildDeadClientGUI=()=>{
+    if(document.getElementById("dead-client-root")) return;
+    const css=document.createElement("style");
+    css.textContent=`
+      #dead-client-root,#dead-client-root *{box-sizing:border-box;font-family:Inter,"Segoe UI",Arial,sans-serif}
+      #dead-client-root{--dc-red:#ff3030;--dc-bg:#13151a;--dc-card:#1a1d23;--dc-side:#0f1115;--dc-text:#e8eaee;--dc-muted:#8a93a2;position:fixed;z-index:2147483000;left:50%;top:50%;transform:translate(-50%,-50%);width:min(820px,94vw);height:min(640px,86vh);display:grid;grid-template-columns:166px minmax(0,1fr);color:var(--dc-text);background:var(--dc-bg);border:1px solid rgba(255,255,255,.09);box-shadow:0 24px 90px rgba(0,0,0,.72);overflow:hidden;font-size:12px}
+      #dead-client-root[hidden]{display:none!important}
+      #dead-client-root{border-radius:18px}
+      #dead-client-launcher{position:fixed;left:16px;top:16px;z-index:2147483001;width:40px;height:40px;border:0;background:rgba(15,17,21,.78);color:#ff3030;padding:0;font:800 24px/40px Arial,"Segoe UI Symbol",sans-serif;text-shadow:0 2px 8px rgba(0,0,0,.85);cursor:pointer;border-radius:10px;text-align:center;touch-action:manipulation}
+      #dead-client-launcher:hover{color:#ff6868;transform:none}
+      #dc-array-list{position:fixed;top:16px;right:16px;z-index:2147482999;display:flex;flex-direction:column;align-items:flex-end;gap:4px;pointer-events:none;font:700 12px/1.2 Inter,"Segoe UI",Arial,sans-serif}
+      .dc-array-item{min-width:92px;padding:7px 10px;border-right:2px solid #ff3030;border-radius:8px 0 0 8px;background:#0f1115;color:#f1f1f1;text-align:right;box-shadow:0 3px 12px rgba(0,0,0,.25)}
+      #dead-client-side{background:var(--dc-side);padding:17px 10px 12px;display:flex;flex-direction:column;min-height:0;border-right:1px solid rgba(255,255,255,.06)}
+      .dc-logo{padding:0 10px 17px;border-bottom:1px solid rgba(255,255,255,.07);font-size:21px;font-weight:800;letter-spacing:-.7px;color:#fff}.dc-logo span{color:var(--dc-red)}
+      #dc-nav{display:flex;flex-direction:column;gap:4px;overflow:auto;padding-top:13px;flex:1}
+      .dc-nav-btn{height:36px;display:flex;align-items:center;gap:10px;padding:0 10px;background:transparent;border:0;border-left:2px solid transparent;color:#9aa1ad;text-align:left;cursor:pointer;font-size:12px}
+      .dc-nav-btn:hover{background:rgba(255,255,255,.04);color:#fff}.dc-nav-btn.active{color:#fff;background:rgba(255,48,48,.12);border-left-color:var(--dc-red)}.dc-nav-ico{width:16px;text-align:center;color:var(--dc-red);font-size:14px}
+      .dc-side-foot{padding:12px 9px 2px;border-top:1px solid rgba(255,255,255,.07);font-weight:700;color:#fff}.dc-side-foot small{display:block;color:var(--dc-muted);font-size:10px;font-weight:500;margin-top:3px}
+      #dead-client-main{display:flex;flex-direction:column;min-width:0;min-height:0;background:var(--dc-bg)}
+      .dc-header{height:52px;flex:none;display:flex;align-items:center;justify-content:space-between;padding:0 19px;border-bottom:1px solid rgba(255,255,255,.07);background:#171a20}.dc-title{font-size:15px;font-weight:750;color:#fff}.dc-close{width:29px;height:29px;border:1px solid rgba(255,255,255,.1);background:transparent;color:#aeb4bf;cursor:pointer;font-size:16px}.dc-close:hover{background:var(--dc-red);color:#fff}
+      #dc-content{padding:15px 18px 20px;overflow:auto;min-height:0}.dc-category-title{margin:0 0 13px;font-size:18px;color:#fff;font-weight:750}
+      .dc-module{margin:0 0 9px;background:var(--dc-side);border:0;border-radius:13px;overflow:hidden}.dc-module.dc-on{border:0}.dc-module-head{border-radius:13px;background:var(--dc-side)}.dc-module-head:hover{background:rgba(255,255,255,.035)}
+      .dc-module-head{display:flex;align-items:center;gap:8px;min-height:42px;padding:6px 11px}.dc-module-toggle{flex:1;display:flex;align-items:center;gap:9px;min-width:0;border:0;background:none;text-align:left;color:#e8eaee;font-size:13px;font-weight:700;cursor:pointer}.dc-dot{width:7px;height:7px;border-radius:50%;background:#525965;flex:none}.dc-on .dc-dot{background:var(--dc-red);box-shadow:0 0 9px rgba(255,48,48,.5)}.dc-bind{min-width:46px;padding:4px 7px;border:0;background:transparent;color:#aab0bb;font-size:18px;font-weight:900;line-height:1;cursor:pointer;text-align:center;display:flex;align-items:center;justify-content:center;flex:0 0 46px}.dc-bind.is-key{font-size:12px;font-weight:400;letter-spacing:.2px}.dc-bind.listening{border-color:var(--dc-red);color:#fff}
+      .dc-settings{padding:5px 12px 11px;border-top:0;background:var(--dc-side);display:none;flex-direction:column;gap:7px}.dc-module.expanded .dc-settings{display:flex}.dc-expand{width:25px;height:25px;border:0;border-radius:6px;background:transparent;color:#aeb4bf;font-size:16px;cursor:pointer;transition:none}.dc-expand:hover{color:#fff;background:transparent}.dc-module.expanded .dc-expand{transform:none;color:var(--dc-red)}.dc-setting{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:27px}.dc-setting-label{color:#adb3bd;font-size:11px}.dc-setting-controls{display:flex;align-items:center;gap:8px;min-width:46%;justify-content:flex-end}.dc-setting input[type=range]{width:150px;accent-color:var(--dc-red)}.dc-number{width:68px;padding:5px 7px;border:1px solid rgba(255,255,255,.12);border-radius:6px;background:#0f1115;color:#fff;text-align:center;font-size:11px}.dc-setting select,.dc-setting input[type=text]{max-width:180px;padding:5px 8px;border:1px solid rgba(255,255,255,.12);border-radius:7px;background:#101216;color:#fff;font-size:11px}.dc-setting input[type=color]{width:42px;height:24px;padding:2px;border:0;border-radius:7px;background:transparent;cursor:pointer}.dc-switch{width:31px;height:17px;position:relative;border:0;border-radius:10px;background:#414650;cursor:pointer;flex:none}.dc-switch:after{content:"";position:absolute;width:11px;height:11px;left:3px;top:3px;border-radius:50%;background:#c7cbd2;transition:none}.dc-switch.on{background:var(--dc-red)}.dc-switch.on:after{transform:translateX(14px);background:white}
+      @media(max-width:600px){#dead-client-root{grid-template-columns:122px minmax(0,1fr);width:96vw}.dc-setting input[type=range]{width:85px}.dc-setting-controls{min-width:42%}}
+    `;
+    (document.head||document.documentElement).appendChild(css);
+    const root=document.createElement("div");root.id="dead-client-root";root.hidden=false;
+    root.innerHTML='<aside id="dead-client-side"><div class="dc-logo">Dead<span>.</span></div><nav id="dc-nav"></nav><div class="dc-side-foot">Dead Client</div></aside><main id="dead-client-main"><header class="dc-header"><div class="dc-title">Combat</div><button class="dc-close" type="button" title="Close">×</button></header><section id="dc-content"></section></main>';
+    (document.body||document.documentElement).appendChild(root);
+    const launcher=document.createElement("button");launcher.id="dead-client-launcher";launcher.type="button";launcher.textContent="⚙";launcher.setAttribute("aria-label","Open settings");launcher.title="Open/close settings";
+    launcher.addEventListener("click",()=>W.uiManager.setGuiVisible(!W.uiManager.guiVisible));
+    (document.body||document.documentElement).appendChild(launcher);
+    const categories=[...new Set(Object.values(W.modules).map(m=>m.category).filter(Boolean))].filter(category=>category!=="HUD");
+    const icons={Combat:"⚔",Movement:"➤",Visuals:"◈",World:"◎",HUD:"▣"};
+    const nav=root.querySelector("#dc-nav"),content=root.querySelector("#dc-content"),title=root.querySelector(".dc-title");
+    let activeCategory=categories.includes("Combat")?"Combat":categories[0];
+    const persist=()=>{try{W.storageManager.save()}catch{}};
+    const bindLabel=(name)=>{const code=W.state.binds[name];if(!code)return "KEY";if(code==="KeyV")return "V";return code.replace(/^Key/,"").replace(/^Digit/,"")};
+    const updateBindButton=(button,name)=>{button.textContent=bindLabel(name);button.classList.toggle("is-key",button.textContent==="KEY");button.classList.remove("listening")};
+    const updateSwitchRows=(module)=>{
+      root.querySelectorAll(`[data-module="${CSS.escape(module.name)}"] .dc-setting`).forEach(row=>{
+        const parent=row.dataset.parent;
+        if(parent) row.hidden=!module[parent];
+        if(row.dataset.switchkey){const sw=module[row.dataset.switchkey];row.querySelector("input,select")?.toggleAttribute("disabled",!!sw)}
+      });
+    };
+    const renderSetting=(module,key,spec)=>{
+      const row=document.createElement("div");row.className="dc-setting";row.dataset.parent=spec.parent||"";row.dataset.switchkey=spec.switchKey||"";
+      const label=document.createElement("span");label.className="dc-setting-label";label.textContent=spec.switchLabel||key;row.appendChild(label);
+      const controls=document.createElement("div");controls.className="dc-setting-controls";row.appendChild(controls);
+      const commit=(value)=>{module[key]=value;persist();updateSwitchRows(module)};
+      if(spec.type==="boolean"){
+        const btn=document.createElement("button");btn.type="button";btn.className="dc-switch"+(module[key]?" on":"");btn.setAttribute("aria-label",key);
+        btn.onclick=()=>{module[key]=!module[key];btn.classList.toggle("on",!!module[key]);persist();updateSwitchRows(module)};controls.appendChild(btn);
+      }else if(spec.type==="slider"){
+        const num=document.createElement("input");num.className="dc-number";num.type="text";num.inputMode="decimal";num.value=module[key]??spec.default??0;
+        num.onchange=()=>{const raw=Number(num.value.trim());if(!Number.isFinite(raw)){num.value=String(module[key]??spec.default??0);return}const v=Math.max(Number(spec.min??0),Math.min(Number(spec.max??100),raw));num.value=String(v);commit(v)};
+        controls.appendChild(num);
+      }else if(spec.type==="select"){
+        const select=document.createElement("select");(spec.options||[]).forEach(option=>{const item=document.createElement("option");item.value=option;item.textContent=option;select.appendChild(item)});select.value=module[key]??spec.default??"";select.onchange=()=>commit(select.value);controls.appendChild(select);
+      }else if(spec.type==="color"){
+        const input=document.createElement("input");input.type="color";input.value=/^#[0-9a-fA-F]{6}$/.test(module[key])?module[key]:"#ff3030";input.oninput=()=>{commit(input.value);if(key==="Accent 1")root.style.setProperty("--dc-red",input.value)};controls.appendChild(input);
+      }else{
+        const input=document.createElement("input");input.type="text";input.maxLength=20;input.value=module[key]??"";input.onchange=()=>commit(input.value.slice(0,20));controls.appendChild(input);
+      }
+      return row;
+    };
+    const renderCategory=(category)=>{
+      activeCategory=category;title.textContent=category;content.replaceChildren();
+      nav.querySelectorAll(".dc-nav-btn").forEach(btn=>btn.classList.toggle("active",btn.dataset.category===category));
+      const heading=document.createElement("h2");heading.className="dc-category-title";heading.textContent=category;content.appendChild(heading);
+      Object.values(W.modules).filter(module=>module.category===category).forEach(module=>{
+        const card=document.createElement("article");card.className="dc-module"+(module.enabled?" dc-on":"");card.dataset.module=module.name;
+        const head=document.createElement("div");head.className="dc-module-head";
+        const toggle=document.createElement("button");toggle.type="button";toggle.className="dc-module-toggle";toggle.innerHTML='<span class="dc-dot"></span><span></span>';toggle.lastElementChild.textContent=module.name;
+        toggle.onclick=()=>{module.toggle();card.classList.toggle("dc-on",!!module.enabled)};
+        const bind=document.createElement("button");bind.type="button";bind.className="dc-bind";bind.dataset.bindModule=module.name;updateBindButton(bind,module.name);bind.title="Click to set module key";
+        bind.onclick=()=>{window.__deadBindCapture={name:module.name,button:bind};bind.textContent="…";bind.classList.remove("is-key");bind.classList.add("listening")};
+        const settings=document.createElement("div");settings.className="dc-settings";
+        for(const [key,spec] of Object.entries(module.schema||{})) settings.appendChild(renderSetting(module,key,spec));
+        if(settings.children.length){
+          const expand=document.createElement("button");expand.type="button";expand.className="dc-expand";expand.textContent="⌄";expand.title="Ayarları aç/kapat";expand.setAttribute("aria-expanded","false");
+          expand.onclick=()=>{const opened=card.classList.toggle("expanded");expand.setAttribute("aria-expanded",String(opened))};
+          head.append(toggle,bind,expand);card.appendChild(head);card.appendChild(settings);
+        }else{
+          head.append(toggle,bind);card.appendChild(head);
+        }
+        content.appendChild(card);updateSwitchRows(module);
+      });
+    };
+    categories.forEach(category=>{const btn=document.createElement("button");btn.type="button";btn.className="dc-nav-btn";btn.dataset.category=category;btn.innerHTML=`<span class="dc-nav-ico">${icons[category]||"•"}</span><span></span>`;btn.lastElementChild.textContent=category;btn.onclick=()=>renderCategory(category);nav.appendChild(btn)});
+    root.querySelector(".dc-close").onclick=()=>W.uiManager.setGuiVisible(false);
+    W.uiManager.guiVisible=true;
+    W.uiManager.setGuiVisible=(visible)=>{W.uiManager.guiVisible=!!visible;root.hidden=!W.uiManager.guiVisible};
+    const arrayList=document.createElement("div");arrayList.id="dc-array-list";arrayList.setAttribute("aria-live","polite");
+    (document.body||document.documentElement).appendChild(arrayList);
+    W.uiManager.updateArrayList=()=>{
+      if(!W.uiManager.guiVisible&&!W.modules.ArrayList?.enabled)return;
+      if(!W.modules.ArrayList?.enabled){arrayList.replaceChildren();arrayList.dataset.signature="";return}
+      const active=Object.values(W.modules).filter(module=>module.enabled&&!(["ClickGUI","ArrayList","Notifications"].includes(module.name)));
+      const signature=active.map(module=>module.name).join("|");
+      if(arrayList.dataset.signature===signature)return;
+      arrayList.dataset.signature=signature;arrayList.replaceChildren();
+      active.forEach(module=>{const row=document.createElement("div");row.className="dc-array-item";row.textContent=module.name;arrayList.appendChild(row)});
+    };
+    W.uiManager.updateArrayList();
+    renderCategory(activeCategory);
+    window.__deadClientGUI={root,renderCategory,get activeCategory(){return activeCategory}};
+  };
+  W.uiManager.init=buildDeadClientGUI;
+  const Q={
+    _lastTs:0,
+    _lastUiUpdate:0,
+    start() {
+      const b=s=> {
+        this.tick(s),
+        K(b)
+      };
+      K(b)
+    },
+    tick(b) {
+      const s=this._lastTs?(b-this._lastTs)/1e3:0;
+      this._lastTs=b,
+      O.checkLobbySwap(),
+      O._inputs.sync();
+      for(const P of z(W.modules))P.render(b, s);
+      if(b-this._lastUiUpdate>=250){this._lastUiUpdate=b;W.uiManager.updateArrayList()}
+    }
+  },
+  N=()=> {
+    W.storageManager.load(),
+    W.uiManager.init(),
+    
+    t(document, "keydown", event=>{
+      const capture=window.__deadBindCapture;
+      if(capture){
+        event.preventDefault();event.stopPropagation();
+        if(event.code==="Escape") W.state.binds[capture.name]="";
+        else if(event.code!=="Backspace") W.state.binds[capture.name]=event.code;
+        if(capture.button){capture.button.classList.remove("listening");const code=W.state.binds[capture.name];capture.button.textContent=!code?"KEY":code==="KeyV"?"V":code.replace(/^Key/,"").replace(/^Digit/,"")}
+        window.__deadBindCapture=null;W.storageManager.save();return;
+      }
+      if(event.repeat) return;
+      if(event.target?.closest?.("input, textarea, select, [contenteditable='true']")) return;
+      if(event.code==="ShiftLeft"||event.code==="ShiftRight"){
+        event.preventDefault();W.uiManager.setGuiVisible(!W.uiManager.guiVisible);return;
+      }
+      for(const [name,code] of R(W.state.binds)){
+        if(code&&code===event.code&&W.modules[name]&&!["ClickGUI","ArrayList","Notifications"].includes(name)){
+          event.preventDefault();W.modules[name].toggle();
+          document.querySelectorAll(`[data-module="${CSS.escape(name)}"]`).forEach(card=>card.classList.toggle("dc-on",!!W.modules[name].enabled));
+        }
+      }
+    }),
+    z(W.modules).forEach(b=>b.updateUI()),
+    W.uiManager.applyTheme(),
+    Q.start()
+  };
+  if(document.readyState==="loading") {
+    t(document, "DOMContentLoaded", N);
+  } else {
+    N();
+  }
+  
+  
+  const startNoaCapture = (() => {
+    let currentNoa = null;
+    let probeActive = false;
+    let retryAfter = 0;
+    let probeTimer = null;
+    let scanTimer = null;
+    const deadline = Date.now() + 120000;
+
+    const hasNoaShape = (value) => {
+      try {
+        return !!value && typeof value === "object" && value.version != null && value.container != null && value.entities != null;
+      } catch {
+        return false;
+      }
+    };
+
+    const isConnectedNoa = (value) => {
+      try {
+        if (!hasNoaShape(value)) return false;
+        const element = value.container.canvas || value.container.element;
+        return element ? element.isConnected === true : true;
+      } catch {
+        return false;
+      }
+    };
+
+    const publishNoa = (value) => {
+      try {
+        if (!value || !value.entities || typeof value.entities.getState !== "function") return false;
+        currentNoa = value;
+        W.hooks.noa = value;
+        window.noa = value;
+        return true;
+      } catch {
+        return false;
+      }
+    };
+
+    const hookEmitter = (value) => {
+      try {
+        const prototype = Object.getPrototypeOf(Object.getPrototypeOf(value));
+        const descriptor = Object.getOwnPropertyDescriptor(prototype, "emit");
+        const originalEmit = descriptor?.value;
+        if (typeof originalEmit !== "function" || !descriptor.configurable || originalEmit.__chNoaHook) return;
+        const hookedEmit = function (...args) {
+          if (!isConnectedNoa(currentNoa) && hasNoaShape(this)) {
+            currentNoa = this;
+            publishNoa(this);
+          }
+          return Reflect.apply(originalEmit, this, args);
+        };
+        Object.defineProperty(hookedEmit, "__chNoaHook", { value: true });
+        Object.defineProperty(prototype, "emit", { ...descriptor, value: hookedEmit });
+      } catch {}
+    };
+
+    const captureCandidate = (value) => {
+      if (!hasNoaShape(value)) return false;
+      currentNoa = value;
+      hookEmitter(value);
+      return publishNoa(value);
+    };
+
+    const beginApplyProbe = () => {
+      if (probeActive || Date.now() < retryAfter) return;
+      const descriptor = Object.getOwnPropertyDescriptor(Function.prototype, "apply");
+      if (!descriptor?.configurable) return;
+      const originalApply = descriptor.get ? descriptor.get.call(Function.prototype) : descriptor.value;
+      if (typeof originalApply !== "function") return;
+
+      let hookedApply;
+      const restoreApply = () => {
+        probeActive = false;
+        retryAfter = Date.now() + 400;
+        try {
+          if (Function.prototype.apply === hookedApply) {
+            Object.defineProperty(Function.prototype, "apply", descriptor);
+          }
+        } catch {}
+        if (probeTimer) clearTimeout(probeTimer);
+        probeTimer = null;
+      };
+
+      hookedApply = function (thisArg, args) {
+        if (!currentNoa && captureCandidate(thisArg)) {
+          restoreApply();
+        }
+        if (!currentNoa && args && typeof args.length === "number") {
+          for (let index = 0; index < args.length; index++) {
+            if (captureCandidate(args[index])) {
+              restoreApply();
+              break;
+            }
+          }
+        }
+        return Reflect.apply(originalApply, this, [thisArg, args]);
+      };
+
+      try {
+        const replacement = descriptor.get
+          ? { ...descriptor, get: () => hookedApply, set: descriptor.set }
+          : { ...descriptor, value: hookedApply };
+        Object.defineProperty(Function.prototype, "apply", replacement);
+        probeActive = true;
+        probeTimer = setTimeout(restoreApply, 250);
+      } catch {
+        probeActive = false;
+      }
+    };
+
+    return () => {
+      scanTimer = setInterval(() => {
+        const candidates = [currentNoa, window.noa, globalThis.tung3, globalThis.__bloxdNoa];
+        let found = null;
+        for (const value of candidates) {
+          if (publishNoa(value)) {
+            found = value;
+            break;
+          }
+        }
+        if (found) {
+          hookEmitter(found);
+          clearInterval(scanTimer);
+          scanTimer = null;
+          return;
+        }
+        if (Date.now() >= deadline) {
+          clearInterval(scanTimer);
+          scanTimer = null;
+          return;
+        }
+        beginApplyProbe();
+      }, 200);
+    };
+  })();
+  startNoaCapture();
+  const I=async()=> {
+    for(; !W.hooks.wpRequire; )await w(500);
+    W.hooks.findModuleID=b=> {
+      const s="modId:"+b;
+      if(s in y._cache) {
+        return y._cache[s];
+      }
+      const z=W.hooks.wpRequire;
+      if(!(z?.m)) {
+        return null;
+      }
+      let o=null;
+      b:for(const s in z.m) {
+        const P=z.m[s];
+        if(typeof P!=="function") {
+          continue b;
+        }
+        try {
+          if(P.toString().includes(b)) {
+            o=s;
+            break b;
+          }
+        } catch{}
+      }
+      return y.cache(s, o)
+    },
+    W.hooks.findModule=b=> {
+      const s=W.hooks.findModuleID(b);
+      return null!=s?W.hooks.wpRequire(s):null
+    };
+    if(window.noa) {
+      W.hooks.noa=window.noa,
+      O.init();
+    } else {
+      {
+        let b=null;
+        for(; !b; ) {
+          try {
+            if(W.hooks.noa?.entities&&typeof W.hooks.noa.entities.getState==="function") {
+              b=W.hooks.noa;
+            } else {
+              const P=W.hooks.findModule("nonBlocksClient:")?.singletons;
+              if(P) {
+                W.hooks.singletons=P,
+                b=z(P).find(b=>b?.entities);
+              }
+            }
+          } catch(b) {
+            void 0
+          }
+          if(!(b)) {
+            await w(500);
+          }
+        }
+        window.noa=b,
+        W.hooks.noa=b,
+        O.init()
+      }
+    }
+  },
+  k=()=> {
+    const b=Object.getOwnPropertyDescriptor(Function.prototype, "call");
+    if(!(b)) {
+      return;
+    }
+    const z=b.get?b.get.call(Function.prototype):b.value;
+    if(typeof z!=="function") {
+      return;
+    }
+    const o=()=>s.defineProperty(Function.prototype, "call", b);
+    let E=!1;
+    try {
+      s.defineProperty(Function.prototype, "call", {
+        configurable:b.configurable,
+        enumerable:b.enumerable,
+        get:new Proxy(function() {
+          return z
+        }, {
+          apply(b, s, P) {
+            const z=b.apply(s, P);
+            return new Proxy(z, {
+              apply(b, s, P) {
+                if(!(e)) {
+                  {
+                    const b=P.find(b=>b&&typeof b==="function"&&b.m&&b.d&&b.o);
+                    if(b) {
+                      e=!0,
+                      W.hooks.wpRequire=b,
+                      I(),
+                      o(),
+                      E=!1;
+                    }
+                  }
+                }
+                return b.apply(s, P)
+              }
+            })
+          }
+        }),
+        set:b.set??function(b) {
+          s.defineProperty(this, "call", {
+            value:b,
+            writable:!0,
+            enumerable:!1,
+            configurable:!0
+          })
+        }
+      }),
+      E=!0
+    } finally {
+      if(!(E)) {
+        o();
+      }
+    }
+  };
+  if(document.readyState==="loading") {
+    document.addEventListener("DOMContentLoaded", k);
+  } else {
+    k();
+  }
+  const U=setInterval(()=> {
+    if(W.canvasManager) {
+      clearInterval(U),
+      W.canvasManager.onRender("esphandler", b=> {
+        const s=O.noa.getEntityIds({
+          alive:!0,
+          players:!0,
+          mobs:!1,
+          excludeFriends:!1
+        }),
+        P=O.noa.get("position", 1);
+        if(!(P)) {
+          return;
+        }
+        const R=W.modules.ESP,
+        o=W.modules.Tracers;
+        b:for(const z of s) {
+          const s=O.noa.get("position", z);
+          if(!s||y.distanceSq(s, P)>25e4) {
+            continue b;
+          }
+          const D=y.isFriend(O.gameUtils.getPlayerName(z)),
+          h={
+            x:s[0],
+            y:s[1]+1,
+            z:s[2]
+          },
+          B={
+            w:1,
+            h:2.07,
+            d:.85
+          };
+          if(R?.enabled) {
+            {
+              const s=D?"#44ffaa":i(R.Color, "#7c5cfc");
+              if(R.Mode==="2D") {
+                b.drawBox2D(h, B, {
+                  color:s,
+                  thickness:1.5
+                });
+              } else {
+                b.drawBox3D(h, B, {
+                  color:s,
+                  thickness:1.5
+                });
+              }
+            }
+          }
+          if(o?.enabled) {
+            {
+              const s=D?"#44ffaa":i(o.Color, "#7c5cfc");
+              b.drawTracer(h, {
+                color:s,
+                thickness:1.2,
+                fromY:"center",
+                dot:!0
+              })
+            }
+          }
+        }
+      });
+    }
+  }, 100);
+  globalThis.__CH={
+    utils:y,
+    math:v,
+    chSDK:O,
+    client:W,
+    Module:_,
+    ticker:Q
+  }
+})();
